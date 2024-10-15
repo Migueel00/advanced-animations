@@ -14,6 +14,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-advancedAnimations-advancedAnimationsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-advancedAnimations-advancedAnimationsTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		F5604B689EF54450BBF77FDF /* SyneMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D7445C8EF4A49E4BEC51C1E /* SyneMono-Regular.ttf */; };
+		CBF46DC13C594E8387BED94C /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CD5B5935B824E95816B67B0 /* OFL.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = advancedAnimations/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-advancedAnimations-advancedAnimationsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-advancedAnimations-advancedAnimationsTests.release.xcconfig"; path = "Target Support Files/Pods-advancedAnimations-advancedAnimationsTests/Pods-advancedAnimations-advancedAnimationsTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		5D7445C8EF4A49E4BEC51C1E /* SyneMono-Regular.ttf */ = {isa = PBXFileReference; name = "SyneMono-Regular.ttf"; path = "../assets/fonts/Syne_Mono/SyneMono-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1CD5B5935B824E95816B67B0 /* OFL.txt */ = {isa = PBXFileReference; name = "OFL.txt"; path = "../assets/fonts/Syne_Mono/OFL.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				1D1D7C60DEC14298A8C55FEE /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -149,6 +154,16 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		1D1D7C60DEC14298A8C55FEE /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				5D7445C8EF4A49E4BEC51C1E /* SyneMono-Regular.ttf */,
+				1CD5B5935B824E95816B67B0 /* OFL.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +260,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				F5604B689EF54450BBF77FDF /* SyneMono-Regular.ttf in Resources */,
+				CBF46DC13C594E8387BED94C /* OFL.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

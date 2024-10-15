@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Syne_Mono/OFL.txt",
+      "sha1": "9dbe4ade63d25d83143e063522e2ddc37ec75842"
+    },
+    {
+      "path": "assets/fonts/Syne_Mono/SyneMono-Regular.ttf",
+      "sha1": "15e3ebdd792e477aba6774f021c5b6db5036e41b"
+    }
+  ]
+}
