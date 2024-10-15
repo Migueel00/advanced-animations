@@ -55,6 +55,7 @@ const Poster = styled.View`
   align-items: center;
   background-color: #FFFFFF;
   border-radius: 10px;
+  height: ${CONSTANTS.ITEM_SIZE * 1.9}px;
 `
 const PosterImage = styled.Image`
   width: 100%;
@@ -106,17 +107,20 @@ function App(): React.JSX.Element {
   };
 
   const [movies, setMovies] = useState<Player[]>([]);
-  const [loadedMovies, setLoadedMovie] = useState(false);
+  const [loadedMovies, setLoadedMovies] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
       const data = await getMovies();
       setMovies(data);
-      setLoadedMovie(true);
+      setLoadedMovies(true);
     }
 
     fetchData();
   }, []);
 
+  if(!loadedMovies){
+    return (<Text>Loading....</Text>)
+  }
 
   return (
       <Container>
