@@ -5,17 +5,16 @@
  * @format
  */
 
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
   View,
   FlatList,
+  Animated,
 } from 'react-native';
 
 import {
@@ -108,6 +107,8 @@ function App(): React.JSX.Element {
 
   const [movies, setMovies] = useState<Player[]>([]);
   const [loadedMovies, setLoadedMovies] = useState(false);
+  const scrollX = useRef(new Animated.Value(0)).current;
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await getMovies();
@@ -125,7 +126,9 @@ function App(): React.JSX.Element {
   return (
       <Container>
         <StatusBar />
-        <FlatList 
+        <Animated.FlatList
+          snapToInterval={CONSTANTS.ITEM_SIZE}
+          decelerationRate={0}
           showsHorizontalScrollIndicator={false}
           data={movies}
           keyExtractor={item => item.key}
@@ -133,10 +136,26 @@ function App(): React.JSX.Element {
           contentContainerStyle={{
             alignItems: 'center'
           }}
-          renderItem={({item}) => {
+          onScroll={Animated.event(
+            [{ nativeEvent: {contentOffset: {x: scrollX}}}],
+            { useNativeDriver: true}
+          )}
+          scrollEventThrottle={16}
+          renderItem={({item, index}) => {
+            const inputRange = [
+              (index - 1) * CONSTANTS.ITEM_SIZE,
+              index * CONSTANTS.ITEM_SIZE,
+              (index + 1) * CONSTANTS.ITEM_SIZE
+            ]
+
+            const translateY = scrollX.interpolate({
+              inputRange,
+              outputRange: [0, -50, 0]
+            })
+
             return (
               <PosterContainer>
-                <Poster>
+                <Poster as = {Animated.View} style={{transform: [{translateY}]}}>
                   <PosterImage source={{ uri: item.posterPath }} />
                   <PosterTitle numberOfLines={1} style={styles.SyneMono}>{item.originalTitle} </PosterTitle>
                   <Rating rating={item.voteAverage} />
